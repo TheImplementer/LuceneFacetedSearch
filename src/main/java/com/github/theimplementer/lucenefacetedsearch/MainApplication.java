@@ -1,6 +1,5 @@
 package com.github.theimplementer.lucenefacetedsearch;
 
-import com.github.theimplementer.lucenefacetedsearch.rest.SimpleResource;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.HandlerList;
@@ -13,15 +12,10 @@ import static org.glassfish.jersey.server.ContainerFactory.createContainer;
 
 public class MainApplication extends ResourceConfig {
 
-    private MainApplication() {
-        register(SimpleResource.class);
-
-    }
-
     public static void main(String[] args) throws Exception {
         final Server server = new Server(9999);
 
-        final JettyHttpContainer jerseyContainer = createContainer(JettyHttpContainer.class, new MainApplication());
+        final JettyHttpContainer jerseyContainer = createContainer(JettyHttpContainer.class, new ApplicationResourceConfig());
 
         final ResourceHandler resourceHandler = new ResourceHandler();
         resourceHandler.setBaseResource(newClassPathResource("."));
