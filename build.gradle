@@ -22,6 +22,7 @@ dependencies {
     compile 'org.apache.lucene:lucene-queryparser:4.9.0'
     compile 'org.apache.lucene:lucene-facet:4.9.0'
     compile 'org.apache.lucene:lucene-analyzers-common:4.9.0'
+    compile 'org.hsqldb:hsqldb:2.3.2'
 
     testCompile 'junit:junit:4.11'
     testCompile 'com.insightfullogic:lambda-behave:0.3'
