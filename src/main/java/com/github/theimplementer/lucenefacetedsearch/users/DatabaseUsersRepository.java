@@ -1,5 +1,6 @@
 package com.github.theimplementer.lucenefacetedsearch.users;
 
+import javax.inject.Inject;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
@@ -15,6 +16,7 @@ public class DatabaseUsersRepository implements UsersRepository {
 
     private final Connection connection;
 
+    @Inject
     public DatabaseUsersRepository(Connection connection) {
         this.connection = connection;
     }

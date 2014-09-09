@@ -6,6 +6,7 @@ import org.apache.lucene.document.TextField;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.search.*;
 
+import javax.inject.Inject;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,6 +19,7 @@ public class LuceneBooksRepository implements BooksRepository {
 
     private final IndexWriter indexWriter;
 
+    @Inject
     public LuceneBooksRepository(IndexWriter indexWriter) {
         this.indexWriter = indexWriter;
     }
